@@ -84,11 +84,8 @@ public class Tiles extends Actor
                 }else{
                     setImage("mine.png");
                 }
-                Greenfoot.delay(60);
-                getWorld().stopped();
-                deathSound.play();
-                EndWorld world = new EndWorld();
-                Greenfoot.setWorld(world);
+                Greenfoot.delay(30);
+                ((MineWorld)getWorld()).die();
             } else {
                 /*neighbouringMines = countNeighbouringMines(this);
                 if (neighbouringMines == 0){
@@ -160,4 +157,8 @@ public class Tiles extends Actor
         return mine;
     }
     
+    public void setMine(boolean mineValue)
+    {
+        this.mine = mineValue;
+    }
 }

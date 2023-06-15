@@ -23,11 +23,6 @@ public class Dude extends SuperSmoothMover
         destinations = new ArrayList<Coordinate>();
         speed = 2.0;
         enableStaticRotation();
-        if(difficulty == 2){
-            setImage("MDude.png");
-        }else if(difficulty == 3){
-            setImage("HDude.png");
-        }
     }
 
     public void act()
@@ -105,7 +100,6 @@ public class Dude extends SuperSmoothMover
         if (Greenfoot.isKeyDown("A") || Greenfoot.isKeyDown("Left")){
             setRotation(180);
             move(speed);
-        
         }
     }
     
@@ -133,15 +127,4 @@ public class Dude extends SuperSmoothMover
             return false; 
         }
     }
-    
-    /*public boolean isTouchingMine(){
-        if(this.isTouching(Tiles.class)) {
-            Tiles tile = (Tiles) getOneIntersectingObject​(Tiles.class);
-            if(tile != null && tile.isMine())//tile.isMine() == false);
-            {
-                return true;
-            }        
-        } 
-        return false;
-    }*/
 }
