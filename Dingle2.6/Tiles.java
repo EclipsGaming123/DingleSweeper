@@ -87,7 +87,6 @@ public class Tiles extends Actor
                 Greenfoot.delay(60);
                 getWorld().stopped();
                 deathSound.play();
-                getWorld().removeObject(Quantavious.class);
                 EndWorld world = new EndWorld();
                 Greenfoot.setWorld(world);
             } else {
@@ -124,9 +123,6 @@ public class Tiles extends Actor
         // Implementation to count neighbouring mines (goodluck Aous)
         
         
-        
-        
-        
         ArrayList<Tiles> tiles;
         if (gridSize == 1)
         {
@@ -139,10 +135,6 @@ public class Tiles extends Actor
         {
             tiles = (ArrayList<Tiles>) getObjectsInRange(30 ,Tiles.class); //hard
         }
-        
-        
-        
-        
         
         for (Tiles t : tiles){
             if(t.isMine() == true)
