@@ -1,0 +1,18 @@
+#BlueJ class context
+comment0.target=Tiles
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ MineSweep\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment1.params=mine
+comment1.target=Tiles(boolean)
+comment2.params=
+comment2.target=void\ act()
+comment2.text=\r\n\ Act\ -\ do\ whatever\ the\ MineSweep\ wants\ to\ do.\ This\ method\ is\ called\ whenever\r\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n
+comment3.params=
+comment3.target=void\ reveal()
+comment4.params=
+comment4.target=void\ flag()
+comment5.params=
+comment5.target=int\ countNeighbouringMines()
+comment6.params=
+comment6.target=boolean\ isMine()
+comment6.text=private\ void\ revealNeighbours(){\r\n\ \ \ \ \ \ \ \ //\ Reveal\ neighbouring\ cells\ (Aous's\ part)\r\n\ \ \ \ \ \ \ \ //\ Implementation\ to\ reveal\ neighbours\ (goodluck\ Aous)\r\n\ \ \ \ \ \ \ \ ArrayList\ <Tiles>\ tile\ \=\ (ArrayList<Tiles>)\ getObjectsInRange(35,\ Tiles.class);\r\n\ \ \ \ \ \ \ \ if\ (countNeighbouringMines(this)\ \=\=\ 0)\r\n\ \ \ \ \ \ \ \ {\r\n\ \ \ \ \ \ \ \ \ \ \ \ for\ (Tiles\ t\:\ tile)\r\n\ \ \ \ \ \ \ \ \ \ \ \ revealNeighbours();\r\n\ \ \ \ \ \ \ \ }\r\n}
+numComments=7

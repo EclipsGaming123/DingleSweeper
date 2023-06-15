@@ -1,0 +1,9 @@
+#BlueJ class context
+comment0.target=Fog
+comment0.text=\r\n\ Fog\ is\ a\ class\ that\ creates\ the\ worldwide\ fog\ effect\ that\ covers\ the\ grid.\r\n\ \r\n\ @author\ (WingFung\ Hu)\ \r\n\ @version\ (1.2)\r\n\ @param\r\n
+comment1.params=d
+comment1.target=Fog(Dude)
+comment2.params=
+comment2.target=void\ act()
+comment2.text=\r\n\ Act\ -\ do\ whatever\ the\ Quantavious\ wants\ to\ do.\ This\ method\ is\ called\ whenever\r\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n
+numComments=3

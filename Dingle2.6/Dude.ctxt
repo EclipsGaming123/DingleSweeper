@@ -1,0 +1,26 @@
+#BlueJ class context
+comment0.target=Dude
+comment0.text=\r\n\ The\ constructor\ for\ Dude,\ the\ player\ avatar.\ \r\n\ \r\n\ @author\ (Wingfung)\ \r\n\ @version\ (2.2)\r\n\ \r\n
+comment1.params=
+comment1.target=Dude()
+comment2.params=
+comment2.target=void\ act()
+comment3.params=
+comment3.target=void\ moveTowardsDestination()
+comment4.params=
+comment4.target=java.util.ArrayList\ getPath()
+comment4.text=\r\n\ Accessor\ to\ allow\ the\ World\ to\ get\ the\ Player's\ path\ to\ redraw\ it\r\n
+comment5.params=c
+comment5.target=void\ addDestination(Coordinate)
+comment5.text=\r\n\ Mutator\ to\ allow\ the\ World\ to\ add\ a\ destination\ to\ the\ Player's\ path\r\n\ (which\ is\ triggered\ by\ a\ mouse\ click\ in\ the\ World)\r\n\ \r\n\ @param\ c\ \ \ \ \ The\ Coordinate\ to\ add\ to\ the\ player's\ destinations\r\n
+comment6.params=
+comment6.target=Coordinate\ getNextDestination()
+comment6.text=\r\n\ Helper\ method\ to\ get\ the\ next\ destination\ in\ the\ List.\ In\ a\ separate\ method\r\n\ in\ case\ we\ want\ to\ add\ other\ things\ to\ happen\ when\ getting\ next\ destination\r\n
+comment7.params=
+comment7.target=void\ playerMovement()
+comment8.params=a\ b
+comment8.target=double\ getDistance(Coordinate,\ Coordinate)
+comment8.text=\r\n\ Static\ method\ that\ gets\ the\ distance\ between\ the\ x,y\ coordinates\ of\ two\ Actors\r\n\ using\ Pythagorean\ Theorum.\r\n\r\n\ @param\ a\ \ \ \ \ First\ Actor\r\n\ @param\ b\ \ \ \ \ Second\ Actor\r\n\ @return\ distance\ The\ distance\ from\ the\ center\ of\ a\ to\ the\ center\ of\ b.\r\n
+comment9.params=
+comment9.target=boolean\ isTouchingQuantavious()
+numComments=10

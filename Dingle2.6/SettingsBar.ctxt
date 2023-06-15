@@ -1,0 +1,15 @@
+#BlueJ class context
+comment0.target=SettingsBar
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ SettingsBar\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment1.params=label\ value\ maxValue\ xSize\ ySize
+comment1.target=SettingsBar(java.lang.String,\ int,\ int,\ int,\ int)
+comment1.text=\r\n\ Act\ -\ do\ whatever\ the\ SettingsBar\ wants\ to\ do.\ This\ method\ is\ called\ whenever\r\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n
+comment2.params=
+comment2.target=void\ incrementValue()
+comment3.params=decrementValue\ minValue
+comment3.target=void\ decrementValue(int,\ int)
+comment4.params=
+comment4.target=int\ getValue()
+comment5.params=
+comment5.target=void\ updateImage()
+numComments=6
