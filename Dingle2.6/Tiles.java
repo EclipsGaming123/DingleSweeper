@@ -5,6 +5,8 @@ import java.util.ArrayList;
  * 
  * @author (your name) 
  * @version (a version number or a date)
+ * 
+ * 
  */
 public class Tiles extends Actor
 {
@@ -16,6 +18,12 @@ public class Tiles extends Actor
     private int gridSize = SharedData.difficulty; 
     private GreenfootSound revealSFX = new GreenfootSound ("TileReveal.wav");
     private GreenfootSound deathSound = new GreenfootSound ("DarkSoul.wav");
+    private GreenfootSound flagPlace = new GreenfootSound ("FlagPlace.wav");
+    private GreenfootSound flagRemove = new GreenfootSound ("FlagRemove.wav");
+    private GreenfootSound youIdiot = new GreenfootSound ("itsamineyouidiot.wav");
+    private GreenfootSound[] flagPlaceSounds, flagRemoveSounds;
+    private int flagPlaceSoundsIndex, flagRemoveSoundsIndex;
+    
     public Tiles(boolean mine){
         this.mine = mine;
         isRevealed = false;
@@ -56,13 +64,9 @@ public class Tiles extends Actor
         if (!isRevealed && !flagged){ 
             int neighbourMines = countNeighbouringMines();
             if(neighbourMines == 0){
-                if(gridSize == 2){
-                    setImage("MRevealed.jpg");
-                }else if(gridSize == 3){
-                    setImage("HRevealed - Copy.jpg");
-                }else{
-                    setImage("revealed.jpg");
-                }
+                GreenfootImage revealedImage = new GreenfootImage("revealed.jpg");
+                ((MineWorld)getWorld()).resizeImage(revealedImage);
+                setImage(revealedImage);
             }else{
                 String strNumber = String.valueOf(neighbourMines);
                 GreenfootImage number = new GreenfootImage(strNumber + ".png");
@@ -96,22 +100,22 @@ public class Tiles extends Actor
     
     public void flag(){
         if (!isRevealed && !flagged){
-            /*flagPlaceSounds[flagPlaceSoundsIndex].play();
+            flagPlaceSounds[flagPlaceSoundsIndex].play();
             flagPlaceSoundsIndex++;
             if (flagPlaceSoundsIndex > flagPlaceSounds.length - 1){
                 flagPlaceSoundsIndex = 0;
-            }*/
+            }
             GreenfootImage flagImage = new GreenfootImage("flagged.png");
             ((MineWorld)getWorld()).resizeImage(flagImage);
             setImage(flagImage);
             
             flagged = true;
         } else if(!isRevealed && flagged){
-            /*flagRemoveSounds[flagRemoveSoundsIndex].play();
+            flagRemoveSounds[flagRemoveSoundsIndex].play();
             flagRemoveSoundsIndex++;
             if (flagRemoveSoundsIndex > flagRemoveSounds.length - 1){
                 flagRemoveSoundsIndex = 0;
-            }*/
+            }
             GreenfootImage tileImage = new GreenfootImage("unknown.png");
             ((MineWorld)getWorld()).resizeImage(tileImage);
             setImage(tileImage);
@@ -124,7 +128,6 @@ public class Tiles extends Actor
         // Calculate and return the number of neighbouring mines (Aous can do this)
         int count = 0;
         // Implementation to count neighbouring mines (goodluck Aous)
-        
         
         ArrayList<Tiles> tiles;
         if (gridSize == 1)

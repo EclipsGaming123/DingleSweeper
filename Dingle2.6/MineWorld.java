@@ -151,7 +151,47 @@ public class MineWorld extends World
             {
                t.setMine(true);
                currentMines++;
-            }        
+            }
+            if(levelType == 1){
+                for(int i = 3; i <=5; i ++)
+                {
+                    for(int j = 4; j <=5;j++) 
+                    {
+                        Tiles spawnTile = grid[i][j];
+                        if(spawnTile.isMine())
+                        {
+                           t.setMine(false);
+                           currentMines--;
+                        } 
+                    }
+                }
+            }else if(levelType == 2){
+                for(int i = 9; i<=11; i ++)
+                {
+                    for(int j = 9; j <=11;j++) 
+                    {
+                        Tiles spawnTile = grid[i][j];
+                        if(spawnTile.isMine())
+                        {
+                           t.setMine(false);
+                           currentMines--;
+                        } 
+                    }
+                }
+            }else if(levelType == 3){
+                for(int i = 11; i<=13; i ++)
+                {
+                    for(int j = 11; j <=13;j++) 
+                    {
+                        Tiles spawnTile = grid[i][j];
+                        if(spawnTile.isMine())
+                        {
+                           t.setMine(false);
+                           currentMines--;
+                        } 
+                    }
+                }
+            }
         }
         timer = new SimpleTimer();
         displayTime = new Label("time elapsed: 0", 24);
@@ -227,5 +267,6 @@ public class MineWorld extends World
             image.scale(2*image.getWidth()/5, 2*image.getHeight()/5);
         }
     }
+    
 }
 
