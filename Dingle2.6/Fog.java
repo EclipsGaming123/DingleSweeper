@@ -1,11 +1,14 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Fog is a class that creates the worldwide fog effect that covers the grid.
+ * Fog is a class that creates the worldwide fog effect that covers the grid. It is done
+ * by setting the image of the Fog to be larger than what the world size is. Then, by having
+ * a transparent circle in the middle, the Fog would then track the location of the player
+ * and set its location appropriately, allowing for the circle to be centered onto the player.
+ * <p>
  * 
- * @author (WingFung Hu) 
- * @version (1.2)
- * @param
+ * @author Wingfung Hu
+ * @version 1.6.5
  */
 public class Fog extends SuperSmoothMover
 {
@@ -13,11 +16,7 @@ public class Fog extends SuperSmoothMover
     public Fog (Dude d) {
         this.d = d;
     }
-    
-    /**
-     * Act - do whatever the Quantavious wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
+
     public void act()
     {
         if(d != null && d.getWorld() != null){

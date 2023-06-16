@@ -1,15 +1,14 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 import java.util.ArrayList;
 /**
- * The constructor for Dude, the player avatar. 
+ * This class is the main character, which is controlled by the player using either WASD,
+ * or the arrow keys depending on the player's preference. The player will interact with the
+ * tiles like it would in normal minesweeper which only used mouse clicks.
+ * <p>
  * 
- * @author (Wingfung) 
- * @version (2.2)
- * 
+ * @author Wingfung Hu
+ * @version 1.2
  */
-
-
-
 public class Dude extends SuperSmoothMover
 {
     private double speed;
@@ -24,7 +23,10 @@ public class Dude extends SuperSmoothMover
         speed = 2.0;
         enableStaticRotation();
     }
-
+    /**
+     * The act method that is run by the Dude class, constantly runs the player movement,
+     * and checks to see if he is being touched by the Quantavious class.
+     */
     public void act()
     {
        //Act count - so we can only redraw on certain acts rather than every act
@@ -42,7 +44,10 @@ public class Dude extends SuperSmoothMover
             moveTowardsDestination();
         }
     }
-
+    /**
+     * A method that checks whether the player pressed one of the following keys from WASD, 
+     * or the arrow keys, and moves the object accordingly based on rotation and speed.
+     */
     private void moveTowardsDestination(){
         // Use method to figure out exact distance between self and destination
         double distanceToDestination = getDistance (new Coordinate(getX(), getY()), currentDestination);

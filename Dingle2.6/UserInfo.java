@@ -9,6 +9,14 @@ import java.util.Scanner;
 
 public class UserInfo extends Actor {
     private String fileName;
+    /**
+     * 
+     * The constructor takes in the score of the other world
+     * it takes the score and compares it with the value of the file
+     * that was previously there, and gets the highest score out of the two
+     * 
+     * @param score is the score from the end of the mineworld
+     */
     public UserInfo(int score) {
         int levelType = SharedData.difficulty;
         if (levelType == 1) {
@@ -16,7 +24,7 @@ public class UserInfo extends Actor {
         } else if (levelType == 2) {
             fileName = "Medium High Score.txt";
         } else {
-            fileName = "High Scores.txt";
+            fileName = "Hard High Score.txt";
         }
         try {
             File file = new File(fileName);

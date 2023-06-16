@@ -1,8 +1,9 @@
 #BlueJ class context
 comment0.target=Arrows
-comment0.text=\r\n\ Class\ arrows\ creates\ the\ arrow\ used\ for\ SettingsBar\r\n\ \r\n\ \r\n\ @author\ (Thomson\ Lam)\ \r\n\ @version\ (1.1)\r\n
+comment0.text=\r\n\ Class\ Arrows\ creates\ the\ arrow\ used\ for\ SettingsBar.\ the\ arrows\ are\ used\ \r\n\ in\ the\ display\ for\ the\ settings.\r\n\ \r\n\ @author\ Thomson\ \r\n\ @version\ June\ 2023\r\n
 comment1.params=isUpArrow\ displayBar\ decrementValue\ minValue
 comment1.target=Arrows(boolean,\ SettingsBar,\ int,\ int)
 comment2.params=
 comment2.target=void\ act()
+comment2.text=\r\n\ Act\ method\ checks\ if\ the\ player\ clicked\ the\ arrow.\r\n
 numComments=3

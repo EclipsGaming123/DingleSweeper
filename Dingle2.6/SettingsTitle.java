@@ -1,10 +1,10 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Class SettingsTitle, used as title for SettingsWorld.
+ * Class SettingsTitle, used as the title for SettingsWorld.
  * 
  * @author Thomson 
- * @version (a version number or a date)
+ * @version June 2023
  */
 public class SettingsTitle extends Actor
 {

@@ -2,4 +2,5 @@
 comment0.target=UserInfo
 comment1.params=score
 comment1.target=UserInfo(int)
+comment1.text=\r\n\ \r\n\ The\ constructor\ takes\ in\ the\ score\ of\ the\ other\ world\r\n\ it\ takes\ the\ score\ and\ compares\ it\ with\ the\ value\ of\ the\ file\r\n\ that\ was\ previously\ there,\ and\ gets\ the\ highest\ score\ out\ of\ the\ two\r\n\ \r\n\ @param\ score\ is\ the\ score\ from\ the\ end\ of\ the\ mineworld\r\n
 numComments=2

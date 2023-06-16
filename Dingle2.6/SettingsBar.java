@@ -1,10 +1,11 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class SettingsBar here.
+ * The class SettingsBar, used for the SettingsWorld. It holds the 
+ * value of increments and decreases of the arrows.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Thomson 
+ * @version June 2023
  */
 public class SettingsBar extends Actor
 {
@@ -25,8 +26,11 @@ public class SettingsBar extends Actor
         this.ySize = ySize;
         updateImage();
     }
-    //change this code to easy, medium and hard difficulty, and assign int to
-    //each string, int represents grid size (if in mineworld)
+
+    /**
+     * Changes to easy, medium and hard difficulty. Assign int to each string,
+     * int represents grid size (if in mineworld).
+     */
     public void incrementValue() {
         value ++;
         if (value > maxValue) {
@@ -34,7 +38,10 @@ public class SettingsBar extends Actor
         }
         updateImage();
     }
-
+    /**
+     * Changes to easy, medium and hard difficulty. Assign int to each string,
+     * int represents grid size (if in mineworld).
+     */
     public void decrementValue(int decrementValue, int minValue) {
         value -= decrementValue;
         if (value <= minValue) {
@@ -46,7 +53,9 @@ public class SettingsBar extends Actor
     public int getValue(){
         return value;
     }
-    
+    /**
+     * Updates the image with correct font and value.
+     */
     private void updateImage() {
     GreenfootImage image = new GreenfootImage(xSize, ySize);
     Font font = new Font("Verdana",true, false, 40); // create a Font object with size 18

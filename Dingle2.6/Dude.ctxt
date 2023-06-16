@@ -1,12 +1,14 @@
 #BlueJ class context
 comment0.target=Dude
-comment0.text=\r\n\ The\ constructor\ for\ Dude,\ the\ player\ avatar.\ \r\n\ \r\n\ @author\ (Wingfung)\ \r\n\ @version\ (2.2)\r\n\ \r\n
+comment0.text=\r\n\ This\ class\ is\ the\ main\ character,\ which\ is\ controlled\ by\ the\ player\ using\ either\ WASD,\r\n\ or\ the\ arrow\ keys\ depending\ on\ the\ player's\ preference.\ The\ player\ will\ interact\ with\ the\r\n\ tiles\ like\ it\ would\ in\ normal\ minesweeper\ which\ only\ used\ mouse\ clicks.\r\n\ <p>\r\n\ \r\n\ @author\ Wingfung\ Hu\r\n\ @version\ 1.2\r\n
 comment1.params=
 comment1.target=Dude()
 comment2.params=
 comment2.target=void\ act()
+comment2.text=\r\n\ The\ act\ method\ that\ is\ run\ by\ the\ Dude\ class,\ constantly\ runs\ the\ player\ movement,\r\n\ and\ checks\ to\ see\ if\ he\ is\ being\ touched\ by\ the\ Quantavious\ class.\r\n
 comment3.params=
 comment3.target=void\ moveTowardsDestination()
+comment3.text=\r\n\ A\ method\ that\ checks\ whether\ the\ player\ pressed\ one\ of\ the\ following\ keys\ from\ WASD,\ \r\n\ or\ the\ arrow\ keys,\ and\ moves\ the\ object\ accordingly\ based\ on\ rotation\ and\ speed.\r\n
 comment4.params=
 comment4.target=java.util.ArrayList\ getPath()
 comment4.text=\r\n\ Accessor\ to\ allow\ the\ World\ to\ get\ the\ Player's\ path\ to\ redraw\ it\r\n

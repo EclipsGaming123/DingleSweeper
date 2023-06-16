@@ -1,10 +1,11 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Continue here.
+ * Continue is a class used for the transition between SettingsWorld and 
+ * MineWorld.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Thomson 
+ * @version June 2023
  */
 public class Continue extends Actor
 {

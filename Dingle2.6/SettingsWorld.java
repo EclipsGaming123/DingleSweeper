@@ -1,10 +1,11 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class SettingsWorld here.
+ * SettingsWorld, where the player can set the difficulty with the number of
+ * mines to clear and total number of tiles.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Thomson
+ * @version June 2023
  */
 public class SettingsWorld extends World
 {

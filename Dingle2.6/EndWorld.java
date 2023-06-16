@@ -1,9 +1,9 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class EndWorld here.
+ * EndWorld, where all the doomed dinglesweepers end up.
  * 
- * @author () 
+ * @author Wingfung, Thomson
  * @version (2.2, 6/15/2023)
  */
 public class EndWorld extends World
@@ -21,6 +21,9 @@ public class EndWorld extends World
         setBackground(new GreenfootImage("youdied.jpg")); 
     }
     
+    /**
+     * Play music for the end world,
+     */
     public void act(){
         endMusic.playLoop();
         endCounter --;

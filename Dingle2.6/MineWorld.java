@@ -263,6 +263,9 @@ public class MineWorld extends World
         Greenfoot.setWorld(world); 
     }
     
+    /**
+       @param 
+       */
     public void resizeImage(GreenfootImage image)
     {
         if (levelType == 2)
@@ -297,7 +300,5 @@ public class MineWorld extends World
     {
         return row*col;
     }
-    
-    
 }
 

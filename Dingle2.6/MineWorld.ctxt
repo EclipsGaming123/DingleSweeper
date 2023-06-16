@@ -12,6 +12,7 @@ comment4.params=
 comment4.target=void\ die()
 comment5.params=image
 comment5.target=void\ resizeImage(greenfoot.GreenfootImage)
+comment5.text=\r\n\ \ \ \ \ \ \ @param\ \r\n
 comment6.params=
 comment6.target=void\ isWin()
 comment7.params=

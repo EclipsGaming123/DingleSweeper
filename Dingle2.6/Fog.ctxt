@@ -1,9 +1,8 @@
 #BlueJ class context
 comment0.target=Fog
-comment0.text=\r\n\ Fog\ is\ a\ class\ that\ creates\ the\ worldwide\ fog\ effect\ that\ covers\ the\ grid.\r\n\ \r\n\ @author\ (WingFung\ Hu)\ \r\n\ @version\ (1.2)\r\n\ @param\r\n
+comment0.text=\r\n\ Fog\ is\ a\ class\ that\ creates\ the\ worldwide\ fog\ effect\ that\ covers\ the\ grid.\ It\ is\ done\r\n\ by\ setting\ the\ image\ of\ the\ Fog\ to\ be\ larger\ than\ what\ the\ world\ size\ is.\ Then,\ by\ having\r\n\ a\ transparent\ circle\ in\ the\ middle,\ the\ Fog\ would\ then\ track\ the\ location\ of\ the\ player\r\n\ and\ set\ its\ location\ appropriately,\ allowing\ for\ the\ circle\ to\ be\ centered\ onto\ the\ player.\r\n\ <p>\r\n\ \r\n\ @author\ Wingfung\ Hu\r\n\ @version\ 1.6.5\r\n
 comment1.params=d
 comment1.target=Fog(Dude)
 comment2.params=
 comment2.target=void\ act()
-comment2.text=\r\n\ Act\ -\ do\ whatever\ the\ Quantavious\ wants\ to\ do.\ This\ method\ is\ called\ whenever\r\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n
 numComments=3

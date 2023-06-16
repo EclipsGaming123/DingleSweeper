@@ -1,9 +1,9 @@
 #BlueJ class context
 comment0.target=Quantavious
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ Quantavious\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment0.text=\r\n\ The\ enemy\ of\ the\ player.\ After\ a\ certain\ amount\ of\ time,\ Quantavious\ will\ spawn\r\n\ in\ the\ world,\ and\ constantly\ chase\ after\ the\ player\ until\ it\ can\ touch\ them,\ which\r\n\ kills\ the\ player\ making\ it\ a\ game\ over.\ \r\n\ <p>\r\n\ \r\n\ @author\ Wingfung\ Hu\ \r\n\ @version\ 1.3\r\n
 comment1.params=d
 comment1.target=Quantavious(Dude)
+comment1.text=\r\n\ Constructor\ for\ Quantavious,\ takes\ in\ the\ coordinates\ of\ the\ player,\ and\r\n\ sets\ the\ speed\ of\ Quantavious\ accordingly\ based\ on\ the\ difficulty\ chosen.\ Also\r\n\ ensures\ that\ Quantavious's\ image\ doesn't\ rotate\ when\ moving.\r\n\ \r\n\ @param\ d\ The\ player\ instance\ which\ is\ used\ to\ take\ coordinates\r\n
 comment2.params=
 comment2.target=void\ act()
-comment2.text=\r\n\ Act\ -\ do\ whatever\ the\ Quantavious\ wants\ to\ do.\ This\ method\ is\ called\ whenever\r\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n
 numComments=3

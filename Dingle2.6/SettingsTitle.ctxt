@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=SettingsTitle
-comment0.text=\r\n\ Class\ SettingsTitle,\ used\ as\ title\ for\ SettingsWorld.\r\n\ \r\n\ @author\ Thomson\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment0.text=\r\n\ Class\ SettingsTitle,\ used\ as\ the\ title\ for\ SettingsWorld.\r\n\ \r\n\ @author\ Thomson\ \r\n\ @version\ June\ 2023\r\n
 comment1.params=
 comment1.target=SettingsTitle()
 numComments=2
