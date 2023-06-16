@@ -35,7 +35,7 @@ public class Tiles extends Actor
         }else if(gridSize == 3){
             setImage("HTiles - Copy.png");
         }else{ // specify param?
-            setImage("unkown.png"); // to change unknown.png to tiles?
+            setImage("unknown.png"); // to change unknown.png to tiles?
         }
     }
     
