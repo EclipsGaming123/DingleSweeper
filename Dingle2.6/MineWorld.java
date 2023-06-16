@@ -218,15 +218,18 @@ public class MineWorld extends World
         if (Greenfoot.mouseClicked(null)){
             MouseInfo mouse = Greenfoot.getMouseInfo();
             // Easy 50 x 50 Medium 
-            if (mouse.getButton() == 3){
-                int x = mouse.getX(), y = mouse.getY();
-                int sX = Length / 2, sY = Width / 2;
-                for (int i = 0; i < Row; i++){
-                    for (int j = 0; j < Col; j++){
-                        int currentY = sY + i * Width, currentX = sX + j * Length;
-                        if (currentY - sY <= y && y <= currentY + sY && currentX - sX <= x && x <= currentX + sX){
-                            Tiles tile = (Tiles)getObjectsAt(x, y, Tiles.class).get(0);
-                            tile.flag();
+            if (mouse != null)
+            {
+                if (mouse.getButton() == 3){
+                    int x = mouse.getX(), y = mouse.getY();
+                    int sX = Length / 2, sY = Width / 2;
+                    for (int i = 0; i < Row; i++){
+                        for (int j = 0; j < Col; j++){
+                            int currentY = sY + i * Width, currentX = sX + j * Length;
+                            if (currentY - sY <= y && y <= currentY + sY && currentX - sX <= x && x <= currentX + sX){
+                                Tiles tile = (Tiles)getObjectsAt(x, y, Tiles.class).get(0);
+                                tile.flag();
+                            }
                         }
                     }
                 }
@@ -265,6 +268,27 @@ public class MineWorld extends World
         }else if (levelType == 3)
         {
             image.scale(2*image.getWidth()/5, 2*image.getHeight()/5);
+        }
+    }
+    
+    public void isWin()
+    {
+        int unclearedTiles = 0;
+        for(int i = 0; i < Col; i++)
+        {
+            for(int j = 0; j < Row; j++)
+            {
+                Tiles test = grid[i][j];
+                if(test.isRevealed())
+                {
+                    unclearedTiles++;
+                }
+            }
+        }
+        if(unclearedTiles == maxMines)
+        {
+            EndWorld world = new EndWorld();
+            Greenfoot.setWorld(world); 
         }
     }
     

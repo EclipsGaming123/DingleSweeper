@@ -37,7 +37,7 @@ public class Tiles extends Actor
         }else{
             setImage("unknown.png");
         }
-        
+
         flagPlaceSoundsIndex = 0;
         flagRemoveSoundsIndex = 0;
         flagPlaceSounds = new GreenfootSound[20];
@@ -91,6 +91,7 @@ public class Tiles extends Actor
             }
             isRevealed = true;
             if (mine){
+                youIdiot.play();
                 GreenfootImage mineImage = new GreenfootImage("mine.png");
                 ((MineWorld)getWorld()).resizeImage(mineImage);
                 setImage(mineImage);
@@ -160,17 +161,7 @@ public class Tiles extends Actor
         }
         return count;
     }
-    
-    /*private void revealNeighbours(){
-        // Reveal neighbouring cells (Aous's part)
-        // Implementation to reveal neighbours (goodluck Aous)
-        ArrayList <Tiles> tile = (ArrayList<Tiles>) getObjectsInRange(35, Tiles.class);
-        if (countNeighbouringMines(this) == 0)
-        {
-            for (Tiles t: tile)
-            revealNeighbours();
-        }
-    }*/
+
     public boolean isMine()
     {
         return mine;
@@ -180,4 +171,10 @@ public class Tiles extends Actor
     {
         this.mine = mineValue;
     }
+    
+    public boolean isRevealed()
+    {
+        return this.isRevealed;
+    }
+    
 }
