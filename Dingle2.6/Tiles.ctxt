@@ -15,4 +15,6 @@ comment5.target=int\ countNeighbouringMines()
 comment6.params=
 comment6.target=boolean\ isMine()
 comment6.text=private\ void\ revealNeighbours(){\r\n\ \ \ \ \ \ \ \ //\ Reveal\ neighbouring\ cells\ (Aous's\ part)\r\n\ \ \ \ \ \ \ \ //\ Implementation\ to\ reveal\ neighbours\ (goodluck\ Aous)\r\n\ \ \ \ \ \ \ \ ArrayList\ <Tiles>\ tile\ \=\ (ArrayList<Tiles>)\ getObjectsInRange(35,\ Tiles.class);\r\n\ \ \ \ \ \ \ \ if\ (countNeighbouringMines(this)\ \=\=\ 0)\r\n\ \ \ \ \ \ \ \ {\r\n\ \ \ \ \ \ \ \ \ \ \ \ for\ (Tiles\ t\:\ tile)\r\n\ \ \ \ \ \ \ \ \ \ \ \ revealNeighbours();\r\n\ \ \ \ \ \ \ \ }\r\n}
-numComments=7
+comment7.params=mineValue
+comment7.target=void\ setMine(boolean)
+numComments=8

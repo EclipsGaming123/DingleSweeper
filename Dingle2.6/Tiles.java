@@ -77,19 +77,11 @@ public class Tiles extends Actor
             }
             isRevealed = true;
             if (mine){
-                if(gridSize == 2){
-                    setImage("Mmine.png");
-                }else if(gridSize == 3){
-                    setImage("Hmine.png");
-                }else{
-                    setImage("mine.png");
-                }
-                Greenfoot.delay(60);
-                getWorld().stopped();
-                deathSound.play();
-                getWorld().removeObject(Quantavious.class);
-                EndWorld world = new EndWorld();
-                Greenfoot.setWorld(world);
+                GreenfootImage mineImage = new GreenfootImage("mine.png");
+                ((MineWorld)getWorld()).resizeImage(mineImage);
+                setImage(mineImage);
+                Greenfoot.delay(30);
+                ((MineWorld)getWorld()).die();
             } else {
                 /*neighbouringMines = countNeighbouringMines(this);
                 if (neighbouringMines == 0){
@@ -104,27 +96,34 @@ public class Tiles extends Actor
     
     public void flag(){
         if (!isRevealed && !flagged){
-            if(gridSize == 2){
-                setImage("Mflagged.png");
-            }else if(gridSize == 3){
-                setImage("Hflagged.png");
-            }else{
-                setImage("flagged.png");
-            }
+            /*flagPlaceSounds[flagPlaceSoundsIndex].play();
+            flagPlaceSoundsIndex++;
+            if (flagPlaceSoundsIndex > flagPlaceSounds.length - 1){
+                flagPlaceSoundsIndex = 0;
+            }*/
+            GreenfootImage flagImage = new GreenfootImage("flagged.png");
+            ((MineWorld)getWorld()).resizeImage(flagImage);
+            setImage(flagImage);
+            
             flagged = true;
-        }else if(flagged){
-            //setImage("unknown.jpg"); <-- add stuff here???
+        } else if(!isRevealed && flagged){
+            /*flagRemoveSounds[flagRemoveSoundsIndex].play();
+            flagRemoveSoundsIndex++;
+            if (flagRemoveSoundsIndex > flagRemoveSounds.length - 1){
+                flagRemoveSoundsIndex = 0;
+            }*/
+            GreenfootImage tileImage = new GreenfootImage("unknown.png");
+            ((MineWorld)getWorld()).resizeImage(tileImage);
+            setImage(tileImage);
             flagged = false;
         }
     }
+
     
     private int countNeighbouringMines(){
         // Calculate and return the number of neighbouring mines (Aous can do this)
         int count = 0;
         // Implementation to count neighbouring mines (goodluck Aous)
-        
-        
-        
         
         
         ArrayList<Tiles> tiles;
@@ -139,10 +138,6 @@ public class Tiles extends Actor
         {
             tiles = (ArrayList<Tiles>) getObjectsInRange(30 ,Tiles.class); //hard
         }
-        
-        
-        
-        
         
         for (Tiles t : tiles){
             if(t.isMine() == true)
@@ -168,4 +163,8 @@ public class Tiles extends Actor
         return mine;
     }
     
+    public void setMine(boolean mineValue)
+    {
+        this.mine = mineValue;
+    }
 }

@@ -131,13 +131,6 @@ public class MineWorld extends World
                     incValue = 10; 
                 }
                 isMine = false; 
-                if(currentMines < maxMines){
-                    int mineChance = Greenfoot.getRandomNumber(20);
-                    if(mineChance == 1){
-                        isMine = true;
-                        currentMines++;
-                    }
-                }
                 Tiles tile = new Tiles(isMine);
                 grid[j][i] = tile;
                 addObject(tile, getWidth()/row * i + incValue, getHeight()/col * j + incValue);//incValue varies per diffculty
@@ -153,25 +146,21 @@ public class MineWorld extends World
             }
             int tileX = Greenfoot.getRandomNumber(row);
             int tileY = Greenfoot.getRandomNumber(col);
-            List <Tiles> tile = getObjectsAt((getWidth()/row * tileX) + incValue, (getHeight()/col * tileY) + incValue, Tiles.class);
-            for(Tiles t: tile)
+            Tiles t = grid[tileY][tileX];
+            if(!t.isMine())
             {
-                if(!t.isMine())
-                {
-                   removeObject(t);
-                   isMine = true;
-                   addObject(new Tiles(isMine), (getWidth()/row * tileX) + incValue, (getHeight()/col * tileY) + incValue);
-                   currentMines++;
-                }
+               t.setMine(true);
+               currentMines++;
             }        
         }
         timer = new SimpleTimer();
         displayTime = new Label("time elapsed: 0", 24);
         addObject(displayTime, 100, 20);        
         dude = new Dude();
+        resizeImage(dude.getImage());
         addObject(dude,250,250); 
         fog = new Fog(dude);
-        //addObject(fog, 250, 250);
+        addObject(fog, 250, 250);
     }
     
     public void act (){
@@ -184,8 +173,6 @@ public class MineWorld extends World
         if(dude.isTouchingQuantavious()){
             die();
         }
-        
-        
 
         // added code for flag 
         if (Greenfoot.mouseClicked(null)){
@@ -228,6 +215,17 @@ public class MineWorld extends World
         removeObject(quantavious);
         EndWorld world = new EndWorld();
         Greenfoot.setWorld(world); 
+    }
+    
+    public void resizeImage(GreenfootImage image)
+    {
+        if (levelType == 2)
+        {
+            image.scale(image.getWidth()/2, image.getHeight()/2);
+        }else if (levelType == 3)
+        {
+            image.scale(2*image.getWidth()/5, 2*image.getHeight()/5);
+        }
     }
 }
 
