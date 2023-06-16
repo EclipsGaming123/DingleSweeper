@@ -34,8 +34,18 @@ public class Tiles extends Actor
             setImage("MTiles.png");
         }else if(gridSize == 3){
             setImage("HTiles - Copy.png");
-        }else{ // specify param?
-            setImage("unknown.png"); // to change unknown.png to tiles?
+        }else{
+            setImage("unknown.png");
+        }
+        
+        flagPlaceSoundsIndex = 0;
+        flagRemoveSoundsIndex = 0;
+        flagPlaceSounds = new GreenfootSound[20];
+        flagRemoveSounds = new GreenfootSound[20];
+        for (int i = 0; i < flagPlaceSounds.length; i++){
+            flagPlaceSounds[i] = new GreenfootSound("FlagPlace.wav");
+        } for (int i = 0; i < flagRemoveSounds.length; i++){
+            flagRemoveSounds[i] = new GreenfootSound("FlagRemove.wav");
         }
     }
     
