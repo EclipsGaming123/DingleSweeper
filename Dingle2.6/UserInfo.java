@@ -7,7 +7,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 
-public class UserInfo {
+public class UserInfo extends Actor {
     private String fileName;
     public UserInfo() {
         int levelType = SharedData.difficulty;
@@ -27,16 +27,22 @@ public class UserInfo {
                 Scanner scanner = new Scanner(file);
                 if (scanner.hasNextInt()) {
                     value = scanner.nextInt();
+                    int score = ((MineWorld)getWorld()).getScore();
+                    if (value < score)
+                    {
+                        value = score;
+                    }
                 }else
                 {
                     //we want to write the score as the high score
-                    
+                    value = ((MineWorld)getWorld()).getScore();
                 }
                 scanner.close();
             }
 
             // Write to the file using PrintWriter
             PrintWriter printWriter = new PrintWriter(new FileWriter(file, false));
+            System.out.print("your high score was: ");
             printWriter.print(value);
             printWriter.close();
         } catch (FileNotFoundException e) {

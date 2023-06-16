@@ -88,7 +88,9 @@ public class MineWorld extends World
     private GreenfootSound quantaviousMusic = new GreenfootSound ("QuantaviousBGM.mp3");
     private GreenfootSound quantaviousSFX = new GreenfootSound("QuantaviousSFX.wav");
     private GreenfootSound deathSound = new GreenfootSound ("DarkSoul.wav");
-    private int Width, Length, Row, Col;
+    private int Width, Length;
+    private GreenfootSound winSFX = new GreenfootSound ("VictorySFX.wav");
+
     // Width is the vertical pixel size of image and Length is horizontal
     /**
      * Constructor for objects of class MyWorld.
@@ -104,18 +106,13 @@ public class MineWorld extends World
             maxMines = flagNumber; 
             Width = 50; // added code for flag 
             Length = 50;
-            Row = 10;
-            Col = 10;
+            row = 10;
         }else if(levelType == 2){//medium 
-            row = 20;  
-            flagNumber = 40; 
-            Row = 16;
-            Col = 16;
+            flagNumber = 40;
+            row = 16;
         }else if(levelType == 3){ //hard
             row = 25; 
             flagNumber = 99; 
-            Row = 16; 
-            Col = 16;
         }
         col = row;
         maxMines = flagNumber;
@@ -223,8 +220,8 @@ public class MineWorld extends World
                 if (mouse.getButton() == 3){
                     int x = mouse.getX(), y = mouse.getY();
                     int sX = Length / 2, sY = Width / 2;
-                    for (int i = 0; i < Row; i++){
-                        for (int j = 0; j < Col; j++){
+                    for (int i = 0; i < row; i++){
+                        for (int j = 0; j < col; j++){
                             int currentY = sY + i * Width, currentX = sX + j * Length;
                             if (currentY - sY <= y && y <= currentY + sY && currentX - sX <= x && x <= currentX + sX){
                                 Tiles tile = (Tiles)getObjectsAt(x, y, Tiles.class).get(0);
@@ -271,12 +268,13 @@ public class MineWorld extends World
         }
     }
     
+    
     public void isWin()
     {
         int unclearedTiles = 0;
-        for(int i = 0; i < Col; i++)
+        for(int i = 0; i < col; i++)
         {
-            for(int j = 0; j < Row; j++)
+            for(int j = 0; j < row; j++)
             {
                 Tiles test = grid[i][j];
                 if(test.isRevealed())
@@ -285,11 +283,45 @@ public class MineWorld extends World
                 }
             }
         }
+        unclearedTiles = maxMines;
         if(unclearedTiles == maxMines)
         {
-            EndWorld world = new EndWorld();
+            winSFX.play();
+            WinWorld world = new WinWorld();
             Greenfoot.setWorld(world); 
         }
+    }
+    
+    public int getUnclearedTiles()
+    {
+        int unclearedTiles = 0;
+        for(int i = 0; i < col; i++)
+        {
+            for(int j = 0; j < row; j++)
+            {
+                Tiles test = grid[i][j];
+                if(test.isRevealed())
+                {
+                    unclearedTiles++;
+                }
+            }
+        }
+        return unclearedTiles;
+    }
+    
+    public int getMaxMines()
+    {
+        return maxMines;
+    }
+    
+    public int getTotalTiles()
+    {
+        return row*col;
+    }
+    
+    public int getScore()
+    {
+        return getTotalTiles() - getUnclearedTiles();
     }
     
 }
