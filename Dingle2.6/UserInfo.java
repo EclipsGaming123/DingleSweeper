@@ -9,7 +9,7 @@ import java.util.Scanner;
 
 public class UserInfo extends Actor {
     private String fileName;
-    public UserInfo() {
+    public UserInfo(int score) {
         int levelType = SharedData.difficulty;
         if (levelType == 1) {
             fileName = "Easy High Score.txt";
@@ -18,33 +18,28 @@ public class UserInfo extends Actor {
         } else {
             fileName = "High Scores.txt";
         }
-
         try {
-            // Read from the file and store the value in an int
-            int value = 0;
             File file = new File(fileName);
-            if (file.exists()) {
-                Scanner scanner = new Scanner(file);
-                if (scanner.hasNextInt()) {
-                    value = scanner.nextInt();
-                    int score = ((MineWorld)getWorld()).getScore();
-                    if (value < score)
-                    {
-                        value = score;
-                    }
-                }else
-                {
-                    //we want to write the score as the high score
-                    value = ((MineWorld)getWorld()).getScore();
-                }
-                scanner.close();
+            Scanner scanner = new Scanner(file);
+            
+            int value = 0;
+            System.out.println("your score was " + score);
+            if (scanner.hasNextInt()) {
+                value = scanner.nextInt();
             }
-
+            scanner.close();
             // Write to the file using PrintWriter
-            PrintWriter printWriter = new PrintWriter(new FileWriter(file, false));
-            System.out.print("your high score was: ");
-            printWriter.print(value);
-            printWriter.close();
+            if (value < score)
+            {
+                value = score;
+            }
+            if (value >= score)
+            {
+                PrintWriter printWriter = new PrintWriter(new FileWriter(file, false));
+                System.out.print("Your high score was: " + value + " tiles cleared");
+                printWriter.print(value);
+                printWriter.close();
+            }
         } catch (FileNotFoundException e) {
             System.out.println("File not found.");
         } catch (IOException e) {

@@ -23,7 +23,7 @@ public class Tiles extends Actor
     private GreenfootSound youIdiot = new GreenfootSound ("itsamineyouidiot.wav");
     private GreenfootSound[] flagPlaceSounds, flagRemoveSounds;
     private int flagPlaceSoundsIndex, flagRemoveSoundsIndex;
-    
+    private static int tilesRemoved = 0;
     public Tiles(boolean mine){
         this.mine = mine;
         isRevealed = false;
@@ -98,13 +98,7 @@ public class Tiles extends Actor
                 Greenfoot.delay(30);
                 ((MineWorld)getWorld()).die();
             } else {
-                /*neighbouringMines = countNeighbouringMines(this);
-                if (neighbouringMines == 0){
-                    revealNeighbours();
-                } else {
-                    // Probably can just take the neighbouringMines variable, and set the image to the appropriate number
-                    // Use if else statements (or switch if you can), need Thomson to make the number graphics on the blank squares
-                }*/
+                tilesRemoved++;
             }
         }
     }
@@ -175,6 +169,16 @@ public class Tiles extends Actor
     public boolean isRevealed()
     {
         return this.isRevealed;
+    }
+    
+    public static int getRevealedTileNumber()
+    {
+        return tilesRemoved;
+    }
+    
+    public static void setStatic()
+    {
+        tilesRemoved = 0;
     }
     
 }

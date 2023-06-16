@@ -100,6 +100,7 @@ public class MineWorld extends World
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(500,500, 1); 
+        Tiles.setStatic();
         setPaintOrder(Label.class, Fog.class, Dude.class, Quantavious.class, Tiles.class);
         if(levelType == 1){ //easy 
             flagNumber = 10; 
@@ -235,11 +236,15 @@ public class MineWorld extends World
         actCounter++;
         if (actCounter == 1200){
             quantavious = new Quantavious(dude);
-            addObject(quantavious, 0, 0);
+//          addObject(quantavious, 0, 0);
             quantaviousSpawned = true;
             stopped();
         }
         displayTime.setValue("Time elapsed: " + timer.millisElapsed()/1000 + "s");
+        if ((getTotalTiles() - getUnclearedTiles()) == flagNumber)
+        {
+            isWin();
+        }
     }
     
     public void stopped(){
@@ -253,6 +258,7 @@ public class MineWorld extends World
         stopped();
         deathSound.play();
         removeObject(quantavious);
+        new UserInfo(getUnclearedTiles());
         EndWorld world = new EndWorld();
         Greenfoot.setWorld(world); 
     }
@@ -271,42 +277,15 @@ public class MineWorld extends World
     
     public void isWin()
     {
-        int unclearedTiles = 0;
-        for(int i = 0; i < col; i++)
-        {
-            for(int j = 0; j < row; j++)
-            {
-                Tiles test = grid[i][j];
-                if(test.isRevealed())
-                {
-                    unclearedTiles++;
-                }
-            }
-        }
-        unclearedTiles = maxMines;
-        if(unclearedTiles == maxMines)
-        {
-            winSFX.play();
-            WinWorld world = new WinWorld();
-            Greenfoot.setWorld(world); 
-        }
+        winSFX.play();
+        new UserInfo(getUnclearedTiles());
+        WinWorld world = new WinWorld();
+        Greenfoot.setWorld(world); 
     }
     
     public int getUnclearedTiles()
     {
-        int unclearedTiles = 0;
-        for(int i = 0; i < col; i++)
-        {
-            for(int j = 0; j < row; j++)
-            {
-                Tiles test = grid[i][j];
-                if(test.isRevealed())
-                {
-                    unclearedTiles++;
-                }
-            }
-        }
-        return unclearedTiles;
+        return Tiles.getRevealedTileNumber();
     }
     
     public int getMaxMines()
@@ -319,10 +298,6 @@ public class MineWorld extends World
         return row*col;
     }
     
-    public int getScore()
-    {
-        return getTotalTiles() - getUnclearedTiles();
-    }
     
 }
 
