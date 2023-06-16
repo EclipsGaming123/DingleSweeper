@@ -160,7 +160,7 @@ public class MineWorld extends World
         resizeImage(dude.getImage());
         addObject(dude,250,250); 
         fog = new Fog(dude);
-        //addObject(fog, 250, 250);
+        addObject(fog, 250, 250);
     }
     
     public void act (){
