@@ -236,7 +236,7 @@ public class MineWorld extends World
         actCounter++;
         if (actCounter == 1200){
             quantavious = new Quantavious(dude);
-//          addObject(quantavious, 0, 0);
+          addObject(quantavious, 0, 0);
             quantaviousSpawned = true;
             stopped();
         }
